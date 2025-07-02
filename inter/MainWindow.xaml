@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Label>Y(-1): </Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label>Y(0):</Label>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label>Y(+1):</Label>
+            </StackPanel>
+        </StackPanel>
         
     </Grid>
 </Window>
