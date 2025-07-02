@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:inter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Find the peak using Quadratic interpolation" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
@@ -13,18 +14,37 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Column="0">
-            <StackPanel Orientation="Horizontal">
-                <Label>Y(-1): </Label>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5,15,0,0">
+            <Label Margin="5">INPUTS:</Label>
+            <StackPanel Orientation="Horizontal"  Margin="5">
+                <Label Width="50">Y(-1): </Label>
+                <xctk:DoubleUpDown Name="Yminus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                <Label>Y(0):</Label>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Width="50">Y(0):</Label>
+                <xctk:DoubleUpDown Name="Y0" Value="11.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                <Label>Y(+1):</Label>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Width="50">Y(1):</Label>
+                <xctk:DoubleUpDown Name="Y1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
             </StackPanel>
+
+            <Button Click="calculate" Width="150" HorizontalAlignment="Left" Margin="5">Calculate</Button>
+
+            <Label Margin="5">OUTPUTS:</Label>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Width="50">X(Peak):</Label>
+                <xctk:DoubleUpDown Name="XPeak" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Width="50">yPeak):</Label>
+                <xctk:DoubleUpDown Name="YPeak" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+            </StackPanel>
+            
         </StackPanel>
         
     </Grid>

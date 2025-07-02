@@ -28,6 +28,7 @@ namespace inter
 
         }
 
+        // do the interpolation
         public double Interpolate( double f1 , double f2 , double f3 )
         {
             double a, b, c, x=0;
@@ -41,6 +42,16 @@ namespace inter
             Console.WriteLine(x);
 
             return x;
+        }
+
+        /// <summary>
+        /// calculate the values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void calculate(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
