@@ -33,7 +33,7 @@
 
             <Button Click="calculate" Width="150" HorizontalAlignment="Left" Margin="5">Calculate</Button>
 
-            <Label Margin="5">OUTPUTS:</Label>
+            <Label Margin="5">OUTPUTS for the peak:</Label>
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Width="50">X(Peak):</Label>

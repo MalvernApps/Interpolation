@@ -21,19 +21,49 @@ namespace inter
     /// </summary>
     public partial class MainWindow : Window
     {
-        double [] dataX = { -1, 0, 1 };
+        // horizontal array for graphing
+        double[] dataX = { -1, 0, 1 };
+
+        // quadratic values
+        double a, b, c, result = 0;
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public double Interpolatev2(double [] dataY)
+        public double Interpolatev2(double[] dataY)
         {
             double f1 = dataY[0];
             double f2 = dataY[1];
             double f3 = dataY[2];
 
+            c = f2;
+            a = ((f1 + f3) - 2.0 * c) / 2.0;
+            b = f3 - a - c;
+
+            result = -b / (2 * a);
+
+            Console.WriteLine(result);
+
+            CalculateValue(result);
+
+            return result;
+        }
+
+        public void CalculateValue(double xValue)
+        {
+            double res = a * xValue * xValue;
+            res += b * xValue;
+            res += c;
+
+            YPeak.Value = res;
+
+        }
+
+        // do the interpolation
+        public double Interpolate(double f1, double f2, double f3)
+        {
             double a, b, c, x = 0;
 
             c = f2;
@@ -41,22 +71,6 @@ namespace inter
             b = f3 - a - c;
 
             x = -b / (2 * a);
-
-            Console.WriteLine(x);
-
-            return x;
-        }
-
-        // do the interpolation
-        public double Interpolate( double f1 , double f2 , double f3 )
-        {
-            double a, b, c, x=0;
-
-            c = f2;
-            a = ((f1 + f3) - 2.0*c)/2.0;
-            b = f3 - a - c;
-
-            x =  -b / (2 * a);
 
             Console.WriteLine(x);
 
@@ -74,9 +88,9 @@ namespace inter
             double y0 = (double)Y0.Value;
             double Y1 = (double)Yplus1.Value;
 
-            double [] dataY = { y_1, y0, Y1 };
+            double[] dataY = { y_1, y0, Y1 };
 
-            double res = Interpolatev2( dataY );
+            double res = Interpolatev2(dataY);
 
             // use scottplot graph the input data
             WpfPlot1.Plot.Clear();
