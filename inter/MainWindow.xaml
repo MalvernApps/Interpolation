@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:inter"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
         Title="Find the peak using Quadratic interpolation" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5,15,0,0">
@@ -28,7 +28,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Width="50">Y(1):</Label>
-                <xctk:DoubleUpDown Name="Y1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                <xctk:DoubleUpDown Name="Yplus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
             </StackPanel>
 
             <Button Click="calculate" Width="150" HorizontalAlignment="Left" Margin="5">Calculate</Button>
@@ -46,6 +46,8 @@
             </StackPanel>
             
         </StackPanel>
-        
+
+        <ScottPlot:WpfPlot x:Name="WpfPlot1" Grid.Column="1"/>
+
     </Grid>
 </Window>

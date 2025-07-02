@@ -23,8 +23,7 @@ namespace inter
         public MainWindow()
         {
             InitializeComponent();
-
-            double res = Interpolate(20, 200, 200);
+           
 
         }
 
@@ -51,7 +50,13 @@ namespace inter
         /// <param name="e"></param>
         private void calculate(object sender, RoutedEventArgs e)
         {
+            double y_1 = (double)Yminus1.Value;
+            double y0 = (double)Y0.Value;
+            double Y1 = (double)Yplus1.Value;
 
+            double res = Interpolate(y_1, y0, Y1);
+
+            XPeak.Value = res;
         }
     }
 }
