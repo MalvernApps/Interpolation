@@ -10,44 +10,61 @@
         Title="Find the peak using Quadratic interpolation" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400" />
-            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="600" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical" Grid.Column="0" Margin="5,15,0,0">
-            <Label Margin="5">INPUTS:</Label>
-            <StackPanel Orientation="Horizontal"  Margin="5">
-                <Label Width="50">Y(-1): </Label>
-                <xctk:DoubleUpDown Name="Yminus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
-            </StackPanel>
+           
 
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Width="50">Y(0):</Label>
-                <xctk:DoubleUpDown Name="Y0" Value="11.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
-            </StackPanel>
+            <GroupBox Header="Input Points">
 
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Width="50">Y(1):</Label>
-                <xctk:DoubleUpDown Name="Yplus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
-            </StackPanel>
+                <StackPanel Orientation="Vertical" >
+                
+                <StackPanel Orientation="Horizontal"  Margin="5">
+                    <Label Width="50">Y(-1):</Label>
+                    <xctk:DoubleUpDown Name="Yminus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Width="50">Y(0):</Label>
+                    <xctk:DoubleUpDown Name="Y0" Value="11.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Width="50">Y(1):</Label>
+                    <xctk:DoubleUpDown Name="Yplus1" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                </StackPanel>
+
+                </StackPanel>
+
+            </GroupBox>
 
             <Button Click="calculate" Width="150" HorizontalAlignment="Left" Margin="5">Calculate</Button>
 
             <Label Margin="5">OUTPUTS for the peak:</Label>
 
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Width="50">X(Peak):</Label>
-                <Label Name="XPeak" Width="100">NOT SET</Label>
-            </StackPanel>
+            <GroupBox Header="Output (Peak)">
+                <StackPanel Orientation="Vertical">
 
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Label Width="50">yPeak):</Label>
-                <Label Name="YPeak" Width="100">not set</Label>
-            </StackPanel>
-            
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Width="50">X(Peak):</Label>
+                        <Label Name="XPeak" Width="100">NOT SET</Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Label Width="50">yPeak):</Label>
+                        <Label Name="YPeak" Width="100">not set</Label>
+                    </StackPanel>
+                </StackPanel>
+                
+            </GroupBox>
+
+
+
         </StackPanel>
 
-        <ScottPlot:WpfPlot x:Name="WpfPlot1" Grid.Column="1"/>
+        <ScottPlot:WpfPlot x:Name="WpfPlot1" Grid.Column="1" Width="520" Margin="20"/>
 
     </Grid>
 </Window>
