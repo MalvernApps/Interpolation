@@ -31,7 +31,6 @@ namespace inter
             result = res;
 
             return result;
-
         }
 
     }

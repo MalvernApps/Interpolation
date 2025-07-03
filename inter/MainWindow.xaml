@@ -37,12 +37,12 @@
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Width="50">X(Peak):</Label>
-                <xctk:DoubleUpDown Name="XPeak" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                <Label Name="XPeak" Width="100">NOT SET</Label>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Width="50">yPeak):</Label>
-                <xctk:DoubleUpDown Name="YPeak" Value="10.0" Width="100" Increment="0.1"></xctk:DoubleUpDown>
+                <Label Name="YPeak" Width="100">not set</Label>
             </StackPanel>
             
         </StackPanel>

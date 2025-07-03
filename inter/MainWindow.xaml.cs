@@ -27,6 +27,8 @@ namespace inter
         // quadratic values
         double a, b, c, result = 0;
 
+        Quadratic ans;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +48,11 @@ namespace inter
 
             Console.WriteLine(result);
 
-            CalculateValue(result);
+            ans = new Quadratic(a, b, c);
+
+          //  CalculateValue(result);
+
+           
 
             return result;
         }
@@ -57,7 +63,9 @@ namespace inter
             res += b * xValue;
             res += c;
 
-            YPeak.Value = res;
+            res = ans.CalculateValue(xValue);
+
+            YPeak.Content = res.ToString();
 
         }
 
@@ -96,10 +104,18 @@ namespace inter
             WpfPlot1.Plot.Clear();
             var sp = WpfPlot1.Plot.Add.Scatter(dataX, dataY);
             WpfPlot1.Plot.Axes.AutoScale();
-            sp.Smooth = true;
+            sp.LegendText = "Input Pionts";
+            // sp.Smooth = true;
             WpfPlot1.Refresh();
 
-            XPeak.Value = res;
+            XPeak.Content = res.ToString();
+            YPeak.Content = ans.CalculateValue( res );
+
+            Graphics graph = new Graphics(WpfPlot1);
+            graph.DoGraph(ans);
+
+            var m = WpfPlot1.Plot.Add.Marker(res, ans.CalculateValue(res) );
+            m.LegendText = "Calculated Peak";
         }
     }
 }
