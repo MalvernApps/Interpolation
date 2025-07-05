@@ -6,7 +6,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:inter"
         xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
-        mc:Ignorable="d"
+        mc:Ignorable="d"     
         Title="Find the peak using Quadratic interpolation" Height="450" Width="800" Icon="/Images/project.ico">
     <Grid>
         <Grid.ColumnDefinitions>
