@@ -57,6 +57,17 @@ namespace inter
             return result;
         }
 
+        /// <summary>
+        /// autoscale the graph
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void gui_Autoscale(object sender, RoutedEventArgs e)
+        {
+                  WpfPlot1.Plot.Axes.AutoScale();
+            WpfPlot1.Refresh();
+        }
+
         public void CalculateValue(double xValue)
         {
             double res = a * xValue * xValue;

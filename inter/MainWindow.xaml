@@ -57,10 +57,14 @@
                         <Label Name="YPeak" Width="100">not set</Label>
                     </StackPanel>
                 </StackPanel>
-                
+
+
+
             </GroupBox>
 
-
+                <GroupBox Header="Graphics">
+                <Button Click="gui_Autoscale" Margin="5" Width="150" HorizontalAlignment="Left">Autoscale</Button>
+                </GroupBox>
 
         </StackPanel>
 
